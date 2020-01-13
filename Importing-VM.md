@@ -1,22 +1,22 @@
 # Notes on Working with VirtualBox
 
-## Export/import docker machine
+## Creating a docker machine
 
-I tried this command to import the existing VM to use with docker-machine
+I use this command to create a new VirtualBox machine for running Docker
 
-docker-machine create --driver virtualbox --virtualbox-no-vtx-check --virtualbox-import-boot2docker-vm COSC-A451-Voting-Machine COSC-A451-Voting-Machine
+`docker-machine create --driver virtualbox --virtualbox-no-vtx-check default`
 
-DOES NOT WORK
+This creates a VM called "default" which is what is used by the `docker-machine` utility and the `docker` commands use that
 
-## Export Container... 1 gb
+## How I Exported the "Phase0" Container... 1 gb
 
-did an export from the container...
+My container is named `cat1`; the name is immaterial.  Its ID is `948ac554455fa`.  I did an export from the container...
 
 `docker export 948ac554455fa -o cat1-Phase0-container.tar`
 
-## Import Container... gives an image, not a container
+## Preparing to Import
 
-First, create a docker machine:
+First, start the docker machine if needed:
 
 `docker-machine start`
 
@@ -32,15 +32,17 @@ Click the "plus" icon at upper right and enter name tomcat-main, port 8080 to po
 
 Click the "plus" icon again and enter name tomcat-control, port 8009 to port 8009
 
-### Where's the Container?
+### Where's the Container file?
 
-The container is on the class google drive "Student resources"
+The container is on the class google drive "Student resources".  It's called `cat1-Phase0-container.tar`.
 
 ### Import the container
 
+You can pick up the container from wherever you downloaded it.  Be sure to give any necessary path before the name.
+
 `docker import cat1-Phase0-container.tar`
 
-This leaves an unnamed image.  Find it with 
+This import will succeed, blurting out a long hashcode ID.  This ID is an (unnamed) image.  Find it with 
 
 `docker images`
 
@@ -52,8 +54,14 @@ hello-world         latest              fce289e99eb9        12 months ago       
 
 ```
 
-Get the hash/ID and use it to start the image:
+Here the ID is `5ddfbb25089c`. Get your hash/ID and use it to start the image:
 
-`docker run --name cat1 -d -p 8080:8080 -p 8009:8009 5ddfbb /usr/local/tomcat/bin/catalina.sh run `
+`docker run --name cat1 -d -p 8080:8080 -p 8009:8009 5ddfbb /usr/local/tomcat/bin/catalina.sh run`
+
+Here I am using the name `cat1` again, but that doesn't matter.  Note in the middle of the command is the hashcode. Docker will allow you to give just a prefix to the full ID.
+
+### Test the Container
+
+Open your browser and browse to [http://localhost:8080](http://localhost:8080).  This is where the mysterious failures occur. However, you should see a "Tomcat" home page. If you like, you can go to the "Manager," then "List Applications," and click on "Voting."
 
 ![](images/2020-01-12 20_41_35-MINGW64__c_Program Files_Docker Toolbox.png)
