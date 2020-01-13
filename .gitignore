@@ -69,3 +69,4 @@ build/*
 # MacOS
 **/.DS_Store
 **/Icon\r\r*
+**/Icon
