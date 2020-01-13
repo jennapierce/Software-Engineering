@@ -32,6 +32,10 @@ Click the "plus" icon at upper right and enter name tomcat-main, port 8080 to po
 
 Click the "plus" icon again and enter name tomcat-control, port 8009 to port 8009
 
+### Where's the Container?
+
+The container is on the class google drive "Student resources"
+
 ### Import the container
 
 `docker import cat1-Phase0-container.tar`
@@ -40,7 +44,16 @@ This leaves an unnamed image.  Find it with
 
 `docker images`
 
+```bash
+$ docker images
+REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
+<none>              <none>              5ddfbb25089c        20 minutes ago      1GB
+hello-world         latest              fce289e99eb9        12 months ago       1.84kB
+
+```
+
 Get the hash/ID and use it to start the image:
 
-`docker run --name cat2 -d -p 8080:8080 -p 8009:8009 68240ae3c8be /usr/local/tomcat/bin/catalina.sh run`
+`docker run --name cat1 -d -p 8080:8080 -p 8009:8009 5ddfbb /usr/local/tomcat/bin/catalina.sh run `
 
+![](images/2020-01-12 20_41_35-MINGW64__c_Program Files_Docker Toolbox.png)
