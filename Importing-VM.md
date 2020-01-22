@@ -56,13 +56,19 @@ Here the ID is `5ddfbb25089c`. Get your hash/ID and use it to start the image:
 
 Here I am using the name `cat1` again, but that doesn't matter.  Note in the middle of the command is the hashcode. Docker will allow you to give just a prefix to the full ID.
 
-### Test the Container
+### Check the Container
 
-Open your browser and browse to [http://localhost:8080](http://localhost:8080).  This is where the mysterious failures occur. However, you should see a "Tomcat" home page. If you like, you can go to the "Manager," then "List Applications," and click on "Voting."
+Issuing the command `docker ps` should show your new "cat1" container running.  Here is a Windows screen showing the `docker run` and then running `docker ps` twice.
 
 ![](images/2020-01-12 20_41_35-MINGW64__c_Program Files_Docker Toolbox.png)
 
-## How I Exported the "Phase0" Container... 1 gb
+
+
+### Test the Container
+
+Open your browser and browse to [http://localhost:8080](http://localhost:8080).  This is where the mysterious failures occur. However, you should see a "Tomcat" home page. If you like, you can go to the "Manager." The username is `cosca451` and the password is the same `cosca451`.
+
+It then "List Applications," and click on "Voting."How I Exported the "Phase0" Container... 1 gb
 
 My container is named `cat1`; the name is immaterial.  Its ID is `948ac554455fa`.  I did an export from the container...
 
