@@ -1,4 +1,4 @@
-# Notes on Working with VirtualBox
+# Notes on Importing and Running the VotingMaching
 
 ## Creating a docker machine
 
@@ -8,11 +8,7 @@ I use this command to create a new VirtualBox machine for running Docker
 
 This creates a VM called "default" which is what is used by the `docker-machine` utility and the `docker` commands use that
 
-## How I Exported the "Phase0" Container... 1 gb
 
-My container is named `cat1`; the name is immaterial.  Its ID is `948ac554455fa`.  I did an export from the container...
-
-`docker export 948ac554455fa -o cat1-Phase0-container.tar`
 
 ## Preparing to Import
 
@@ -65,3 +61,9 @@ Here I am using the name `cat1` again, but that doesn't matter.  Note in the mid
 Open your browser and browse to [http://localhost:8080](http://localhost:8080).  This is where the mysterious failures occur. However, you should see a "Tomcat" home page. If you like, you can go to the "Manager," then "List Applications," and click on "Voting."
 
 ![](images/2020-01-12 20_41_35-MINGW64__c_Program Files_Docker Toolbox.png)
+
+## How I Exported the "Phase0" Container... 1 gb
+
+My container is named `cat1`; the name is immaterial.  Its ID is `948ac554455fa`.  I did an export from the container...
+
+`docker export 948ac554455fa -o cat1-Phase0-container.tar`
