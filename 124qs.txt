@@ -1,0 +1,9 @@
+Emilie Blecker
+Software Engineering Questions for 1/24
+
+How simple or comlex does the voting machine need to be? For example how customizable should it be? (How is the client going to use it)
+
+Where are we storing the voting information? Are we updating the server immediately?
+
+Should we have an option for voters to be able to see the results? Before or after they have placed their votes/ the votes are finalized?
+ 
