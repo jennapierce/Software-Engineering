@@ -1,3 +1,7 @@
+/*
+ *  VotingMachine.java
+ * implements a simple voting machine for a single choice of two candidates
+ */
 import java.io.PrintStream;
 import java.io.PrintWriter;
 
