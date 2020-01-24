@@ -1,6 +1,7 @@
 /*
  *  VotingMachine.java
  * implements a simple voting machine for a single choice of two candidates
+ * Andrew Wolfe
  */
 import java.io.PrintStream;
 import java.io.PrintWriter;
