@@ -58,7 +58,13 @@ export DOCKER_MACHINE_NAME="default"
 
 ### What Setting the Environment does:
 
+...on MacOS, you check whether you're up using `docker ps -a`. Before running that `eval` command, you get an error.  Afterwards, you're good:
+
 ![image-20200125162953524](images/image-20200125162953524.png)
+
+Similarly, on Windows:
+
+![image-20200125164326339](images/image-20200125164326339.png)
 
 ## Preparing to Import
 
