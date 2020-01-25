@@ -16,19 +16,19 @@ I use this command to create a new VirtualBox machine for running Docker.  (For 
 
 `docker-machine create --driver virtualbox --virtualbox-no-vtx-check default`
 
-This creates a VM called `default` which is what is used by the `docker-machine` utility and the `docker` commands use that.
+This creates a VM called `default` which is what is used by the `docker-machine` utility and the `docker` commands use that.  You can create multiple Docker machines, just use different names.  
 
 ## Configuring to run Docker against the docker machine
 
 The new docker machine is dormant.  To start it, use
 
-`docker-machine start`
+`docker-machine start default`
 
 When it completes, why does it give you a message like this?
 
 ![image-20200125162702574](images/image-20200125162702574.png)
 
-When the docker machine starts, it does not advertise itself or provide any kind of registration.  Because of this, when you issue a regular `docker` command, that command will not know how to work with the docker machine.  It needs an *environment*.  So what is this `docker-machine env`?  It tells you the settings needed for `docker` to talk to the machine.  It does not actually *set* those settings, it tells you what they are.  It also tells you *how* to set them.
+When the docker machine starts, it does not advertise itself or provide any kind of registration.  Because of this, when you issue a regular `docker` command, that command will not know how to work with the docker machine.  It needs an *environment*.  So what is this `docker-machine env default`?  It tells you the settings needed for `docker` to talk to the `default` machine after it is started.  It does not actually *set* those settings, it tells you what they are.  It also tells you *how* to set them.
 
 ### `docker-machine env default` on windows
 
@@ -70,9 +70,9 @@ Similarly, on Windows:
 
 First, start the docker machine if needed:
 
-`docker-machine start`
+`docker-machine start default`
 
-### Open Ports on virtualbox (Possibly not needed)
+### Open Ports on the Virtual Machine (Possibly not needed)
 
 need to open 8080 and 8009 on virtualbox.  Open the VirtualBox Manager and select the Settings on the `default` virtual machine.
 
@@ -93,6 +93,8 @@ The container is on the class google drive "Student resources".  It's called `ca
 You can pick up the container from wherever you downloaded it.  Be sure to give any necessary path before the name.
 
 `docker import /Users/adwolfe/Downloads/cat1-Phase0-container.tar`
+
+*If you attempt the import on Windows using a Bash shell rather than CMD, a path to the file will not work.  It may work if you have the tar file in the current directory, but it's most reliable to use a CMD prompt for the import.*
 
 This import will succeed, blurting out a long hashcode ID.  This ID is an (unnamed) image.  Find it with 
 
@@ -120,11 +122,17 @@ Issuing the command `docker ps` should show your new "cat1" container running.  
 
 
 
-### Test the Container
+### Test the Container in Your Browser
 
-Open your browser and browse to [http://localhost:8080](http://localhost:8080).  This is where the mysterious failures occur. However, you should see a "Tomcat" home page. If you like, you can go to the "Manager." The username is `cosca451` and the password is the same `cosca451`.
+Get the docker machine IP address with `docker-machine ip default`.  Then open that IP to port 8080.  For example:
 
-It then "List Applications," and click on "Voting."How I Exported the "Phase0" Container... 1 gb
+![image-20200125165237241](images/image-20200125165237241.png)
+
+If you have mapped ports, you can open your browser and browse to [http://localhost:8080](http://localhost:8080).  You should see a "Tomcat" home page as above. If you like, you can go to the "Manager." The username is `cosca451` and the password is the same `cosca451`.
+
+It then "List Applications," and click on "Voting."  You'll see that it's really lame, plus some of the links don't work.
+
+## In case you're interested—how I Exported the "Phase0" Container... 1 gb
 
 My container is named `cat1`; the name is immaterial.  Its ID is `948ac554455fa`.  I did an export from the container...
 
