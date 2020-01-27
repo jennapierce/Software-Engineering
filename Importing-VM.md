@@ -8,12 +8,6 @@ I use this command to create a new VirtualBox machine for running Docker
 
 This creates a VM called "default" which is what is used by the `docker-machine` utility and the `docker` commands use that
 
-## How I Exported the "Phase0" Container... 1 gb
-
-My container is named `cat1`; the name is immaterial.  Its ID is `948ac554455fa`.  I did an export from the container...
-
-`docker export 948ac554455fa -o cat1-Phase0-container.tar`
-
 ## Preparing to Import
 
 First, start the docker machine if needed:
