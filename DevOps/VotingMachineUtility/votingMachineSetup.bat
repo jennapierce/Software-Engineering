@@ -4,11 +4,8 @@ TITLE Voting Machine Setup
 
 
 ECHO This bat file sets up everything needed to run the voting machine software
-ECHO Continue to login to docker
+ECHO YOU MUST RUN DOCKER QUICKSTART BEFORE FIRST TIME SETUP
 ECHO ==========================================================================
-PAUSE
-CLS
-docker login
 PAUSE 
 CLS
 
