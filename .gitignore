@@ -7,6 +7,9 @@
 build/*
 !build/.gitkeep
 
+# Ignore Microsoft Office Temp files
+**/~$*
+
 # See https://github.com/github/gitignore
 
 # Log file
