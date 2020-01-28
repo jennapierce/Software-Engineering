@@ -46,7 +46,12 @@ GOTO startMenu
 :2
 ECHO.
 ECHO		DOCKER SETUP
-cls
+ECHO.
+ECHO.
+::docker-machine start
+::docker-machine env default
+
+::@FOR /f "tokens=*" %i IN ('docker-machine env default') DO @%i
 docker ps -a
 ECHO Look at the above table and see if you have any containers open
 set /p anyContainers="Do you have any containers(enter yes or no):"
@@ -62,7 +67,7 @@ set /p HASHCODEINPUT="Image ID:"
 
 set /p containerName="Name your container(just put cat1):"
 ECHO Opening port 8080 and 8009 by default
-docker run --name %containerName%-d -p 8080:8080 -p 8009:8009 %HASHCODEINPUT% /usr/local/tomcat/bin/catalina.sh run
+docker run --name %containerName% -d -p 8080:8080 -p 8009:8009 %HASHCODEINPUT% /usr/local/tomcat/bin/catalina.sh run
 
 docker-machine ip
 
