@@ -1,0 +1,26 @@
+Database with tables
+    table for voters and table for candidates
+
+Voter table will store all the information user enters while registering
+    Examples
+        Name
+        User ID
+        Password
+            Will we need a forgot password or reset password option?
+        Sex
+        Age
+    What other information will we need?
+        Do we need users to set a security question? How many?
+
+Candidate table will store candidate information
+    Will candidates register themselves? Will they be pre-registered?
+    Examples
+        Name
+        Sex
+        Age
+        Count
+
+Any other tables?
+    Admin? 
+
+How will we differentiate people when registering? 
