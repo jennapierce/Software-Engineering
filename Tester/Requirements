@@ -1,0 +1,26 @@
+Requirements for the voting system
+What are system objectives?
+
+Functional
+1. Equality of Access -> should allow voters to vote EASILY
+2. Easy to  use interface
+3. Flexibility -> different types of question formats
+4. Accuracy -> count all votes accurately
+5. Recounts must be possible
+6. Scalability
+
+Democratic system in that only people who are eligible can vote and ensures that they can only vote once
+*No voter should be allowed to vote more than the alloted number
+
+Security
+1. Data -> Vote is recorded as intended and should not be able to be changed. If changed/deleted, should notify.
+2. Reliability -> Should work without loss of data-- especially votes
+
+Automated tester platforms
+1. Katalon
+2. Apache JMeter
+3. Selenium
+4. Protractor
+
+All support every OS 
+All support Java
