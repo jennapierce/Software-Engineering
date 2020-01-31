@@ -17,10 +17,24 @@ Security
 2. Reliability -> Should work without loss of data-- especially votes
 
 Automated tester platforms
-1. Katalon
-2. Apache JMeter
-3. Selenium
-4. Protractor
+1. Katalon -- free
+    1. recommended for advanced scripting
+    2. easy to set up and use
+
+2. Apache JMeter -- Open-source
+    1. Highly extendable core(friendly to plugins, scripts, and timers)
+    2. Integration through libraries for Marven, Gradle, and Jenkins
+
+3. Selenium -- Open-source
+    1. Highly extendable through libraries and API
+
+4. Protractor -- free
+    1. supports angular-specific locator strategies
+    2. frameworks (Jasmine, mocha, serenity/js, and cucumber)
+
+5. Automation Anywhere -- free (community edition)
+    1. flexible deployment
 
 All support every OS 
 All support Java
+All are flexible and maintainable
