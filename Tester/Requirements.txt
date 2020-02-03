@@ -1,5 +1,10 @@
 Requirements for the voting system
 What are system objectives?
+System objectives are 
+-provide services for organizing and conducting an opinion expressing process (voting)
+-support every person involved: admin, candidates, and voters
+-user-friendly interaction (for voter and admin) 
+-generation of vote tally 
 
 Functional
 1. Equality of Access -> should allow voters to vote EASILY
@@ -15,6 +20,7 @@ Democratic system in that only people who are eligible can vote and ensures that
 Security
 1. Data -> Vote is recorded as intended and should not be able to be changed. If changed/deleted, should notify.
 2. Reliability -> Should work without loss of data-- especially votes
+3. 
 
 Automated tester platforms
 1. Katalon -- free
