@@ -24,3 +24,39 @@ Any other tables?
     Admin? 
 
 How will we differentiate people when registering? 
+
+
+DATABASE FUNCTIONS
+
+New Admin Login Function
+: Once the admin uses the admin, the application will prompt them to create a new password
+: Password should be stored directly into the database(encrypted)
+
+Random Key generator function
+: should have functionality to create a random 16 letter/number key for both admins and users
+: these should be stored in the appropriate table in the database (one for admin first login keys, one for one time user keys)
+
+StoreInformation function
+:should have parameters telling the function where to store the data and what data to store
+
+UseKey function
+:Function that finds the key that the user uses in the table(looking at both admin table and user table)
+: the function should then purge the key used.
+
+CheckKey function
+: should have a key parameter (provided by the user) and check whether that key exists in the admin key table and the user table. 
+: if key does exist, call the UseKey function, passing it the key parameter and log the user into the appropriate site. 
+
+LoginToDatabase function
+: should provide all information for the application to login to the database for data storage
+: Possibly an access token, etc. 
+: this will be one of the more challenging tasks. 
+
+LogoutOfDatabase function (not sure if this is neccessary)
+:Maybe logout of the DB when application shuts down?
+
+UpdateDatabase function
+: Should accept a parameter containing the user's votes (Probably coming from front end, right?)
+: Should then access the database and add the vote to the appropriate table.(Table parameter to keep it modular?)
+
+
