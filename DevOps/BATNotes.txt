@@ -1,0 +1,12 @@
+Servlet acts as middle-man for Database and Webserver
+
+Batch scripting initiates VotingServlet.java within VotingMachine.java
+
+List of Batch Scripting commands
+    https://www.tutorialspoint.com/batch_script/batch_script_commands.htm
+
+(BAT command) START, when invoked will open a new document or program in a window. Most likely option for calling Servlet
+
+Follow through the VotingMachine.java, VotingServlet.java, TestVotingMachine.java and consider references and implementations of each function/class/variable
+
+    Tracing through the program could provide insight to BAT implementation
