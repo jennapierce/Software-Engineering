@@ -9,7 +9,8 @@ import java.io.PrintWriter;
 class VotingMachine {
     enum Candidate {
         JOHN_ADAMS,
-        THOMAS_JEFFERSON
+        THOMAS_JEFFERSON,
+        JAMES_MADISON
     }
 
     int [] votes = new int [Candidate.values().length];
