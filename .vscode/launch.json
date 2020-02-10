@@ -5,17 +5,29 @@
     "version": "0.2.0",
     "configurations": [
         {
-            // This works well on both Mac and Windozzze. Surprise...
+            "type": "java",
+            "name": "CodeLens (Launch) - TestVotingMachine",
+            "request": "launch",
+            "mainClass": "TestVotingMachine",
+            "projectName": "Voting-Machine_80f13954"
+        },
+        {
             "type": "java",
             "name": "Debug (Launch) - External Terminal",
             "request": "launch",
             "cwd": "${workspaceFolder}",
             "preLaunchTask": "Build Java Classes",
-            "sourcePaths": ["./build/", "."],
-            "classPaths": ["./build/", "."],
+            "sourcePaths": [
+                "./build/",
+                "."
+            ],
+            "classPaths": [
+                "./build/",
+                "."
+            ],
             "mainClass": "${fileBasenameNoExtension}",
             "stopOnEntry": false,
-            "console": "integratedTerminal",
+            "console": "integratedTerminal"
         }
     ]
 }

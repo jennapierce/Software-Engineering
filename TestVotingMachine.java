@@ -1,6 +1,8 @@
+import static org.junit.Assert.assertEquals;
+import org.junit.Test; //execute file for testing
 
-class TestVotingMachine {
-
+public class TestVotingMachine {
+    //this main section can not be tested yet
     public static void main (String [] Arguments) {
         System.out.println("Starting up " + java.lang.invoke.MethodHandles.lookup().lookupClass().getName());
         VotingMachine machine = new VotingMachine();
@@ -11,5 +13,11 @@ class TestVotingMachine {
         machine.voteFor(VotingMachine.Candidate.THOMAS_JEFFERSON);
         machine.reportVotes();
         System.out.println("Finished voting-machine test");
+    }
+
+    @Test //label section for test
+    public void testadd(){
+        String str = "JUnit is working";
+        assertEquals("JUnit is working", str); //JUnit test
     }
 }
