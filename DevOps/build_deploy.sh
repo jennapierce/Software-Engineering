@@ -1,15 +1,45 @@
 #!/bin/bash 
 
-cp -v build/*.class Voting__.war/WEB-INF/classes
+WARNAME=Voting
+WARFOLDER=Voting__.war
+CATCONTAINER=cat1
+CATPORT=8080
+DOCKMACH=default
+DOCKIP=$(docker-machine ip "${DOCKMACH}" 2>/dev/null)
 
-(pushd Voting__.war; jar cfv ../Voting.war *)
+if [ $? -ne 0 ]
+then
+	echo "Docker machine is not running - exiting" >&2
+	exit 1
+fi
 
-echo "Now undeploy the voting app"
-open http://localhost:8080/manager/html
+echo "Rebuilding the Voting Machine WAR file"
 
+# Put the class files into the skeleton WAR directory
+# Java class files must be under WEB-INF/classes
+cp -vr build/* "${WARFOLDER}/WEB-INF/classes"
+
+# Go into the skeleton WAR file so that 'jar' command will use it as 
+# the root of the WAR
+(
+	pushd "${WARFOLDER}"; 
+	jar cvf ../"${WARNAME}.war" *
+)
+# The parentheses create a bash "sub-shell" that goes into the WAR folder, 
+# builds the WAR, then exits
+# jar "c" - create
+# jar "v" - verbose
+# jar "f ../Voting.war" - name of the output file is ../Voting.war
+
+echo "Opening the Tomcat manager page.  Find '$WARNAME' and undeploy the voting app"
+open http://${DOCKIP}:${CATPORT}/manager/html
+
+echo "Waiting for undeploy"
 pause
 
-docker exec -it cat1 rm -frv /usr/local/tomcat/work/Catalina/localhost/Voting
+echo "Removing cached WAR files"
+docker exec -it "$CATCONTAINER" rm -frv "/usr/local/tomcat/work/Catalina/localhost/$WARNAME"
 
-echo "Now deploy the new WAR from the new Voting.war file"
-open http://localhost:8080/manager/html
+echo "Reopening manager. Scroll down to 'Deploy', and under 'WAR file to deploy',"
+echo "Select the newly-built ${WARNAME}.war file and click Deploy"
+open http://${DOCKIP}:${CATPORT}/manager/html
