@@ -1,4 +1,8 @@
-import static org.junit.Assert.assertEquals;
+/*
+    Testing requriment document in tester folder
+*/
+
+import static org.junit.Assert.assertEquals; //check to see that the values are equal
 import org.junit.Test; //execute file for testing
 
 public class TestVotingMachine {

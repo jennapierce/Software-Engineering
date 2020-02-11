@@ -1,0 +1,9 @@
+JUnit4 has been implemented into the project and put into the lib folder.
+This is a list of things that needs to be installed for it to work correctly:
+
+VSCode Pluggins:
+ 1. Java Test Runner
+ 2. Java Extension pack
+ 3. Maven (optional)
+
+*Maven is optional since it is mainly to wrap the project. As long as the .jar files are in the lib folder, this is not nesseccary.
