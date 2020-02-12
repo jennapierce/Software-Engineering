@@ -1,0 +1,51 @@
+<!-- Project Name: Software Engineering
+Author: Emilie Blecker
+Date Last Modified: 2/3/20-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>VOTE NOW</title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="interface.css">
+</head>
+<div id = "wrapper">
+<body>
+    <header>  
+    <h1>  
+        VOTE NOW
+    </h1>
+    </header>
+    <nav>
+        <a href="interface.html"> Home </a> &nbsp;
+        <a href="vote.html">Vote </a> &nbsp;
+        <a href="account.html"> Log in </a> &nbsp;
+        <a href="results.html">View Results </a> &nbsp;
+        <a href="contact.html">Contact </a> 
+    </nav>
+    <h2>    
+        Log in page for customers
+    </h2>
+    <p> <br> Required fields are marked with an asterisk(<span class = "required">*</span>).</p>
+
+    <form method = "post" action = "http://websevbasics.net/scripts/pacific.php">
+        <label for="myFName"><span class = "required">*</span>First Name:</label>
+        <input type="text" name="myFName" id="myFName" required></br>
+        <label for="myLName"><span class = "required">*</span>Last Name:</label>
+        <input type="text" name="myLName" id="myLName" required></br>
+        <label for="myEmail"><span class = "required">*</span>E-mail:</label>
+        <input type="email" name="myEmail" id="myEmail" required></br>
+        <label for="myPhone">Phone:</label>
+        <input type="tel" name="myPhone" id="myPhone" ></br>
+
+        <label for="myComments"><span class = "required">*</span>Comments:</label>
+        <textarea name="myComments" id="myComments" rows="2" cols="20"></textarea>
+        <input id="mySubmit" type="submit" value="Apply Now" required>
+        </form>
+   
+    <footer>
+       
+    </footer>
+</body>
+</div>
+</html>
